@@ -19,7 +19,7 @@ public final class MySQL {
 		return true
 	}()
 	
-	var mysqlPtr: UnsafeMutablePointer<MYSQL>
+	public var mysqlPtr: UnsafeMutablePointer<MYSQL>
 	/// Create mysql server connection and set ptr
 	public init() {
 		_ = MySQL.initOnce
