@@ -19,7 +19,7 @@ public final class MySQL {
 		return true
 	}()
 	
-	public var mysqlPtr: UnsafeMutablePointer<MYSQL>
+	var mysqlPtr: UnsafeMutablePointer<MYSQL>
 	/// Create mysql server connection and set ptr
 	public init() {
 		_ = MySQL.initOnce
@@ -213,6 +213,8 @@ public final class MySQL {
 			return MYSQL_OPT_SSL_CRL
 		case MySQLOpt.MYSQL_OPT_SSL_CRLPATH:
 			return MYSQL_OPT_SSL_CRLPATH
+        case .MYSQL_OPT_SSL_MODE:
+            return MYSQL_OPT_SSL_MODE
 		case MySQLOpt.MYSQL_OPT_CONNECT_ATTR_RESET:
 			return MYSQL_OPT_CONNECT_ATTR_RESET
 		case MySQLOpt.MYSQL_OPT_CONNECT_ATTR_ADD:
